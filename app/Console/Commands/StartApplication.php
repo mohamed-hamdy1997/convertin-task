@@ -38,6 +38,10 @@ class StartApplication extends Command
         $this->info('Start migration.');
         $this->migrate();
 
+        $this->info('Start seed users&admins.');
+        $this->seed();
+
+        $this->info('Done.');
     }
 
     private function cpEnvFile()
@@ -71,5 +75,10 @@ class StartApplication extends Command
     private function migrate()
     {
         passthru("php artisan migrate");
+    }
+
+    private function seed()
+    {
+        passthru("php artisan db:seed");
     }
 }
