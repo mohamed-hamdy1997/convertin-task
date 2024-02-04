@@ -25,7 +25,6 @@ class TaskController extends Controller
         $dir = $request->input('order.0.dir', 'desc');
         $search = $request->input('search.value');
 
-
         $tasks = Task::query()
             ->where(function ($query) use ($search) {
                 $query->where('title', 'like', '%' . $search . '%')
@@ -50,7 +49,6 @@ class TaskController extends Controller
             }
         }
 
-
         return response()->json(['draw' => intval($request->input('draw')), 'recordsFiltered' => $count, 'recordsTotal' => $count, 'data' => $data,]);
     }
 
@@ -68,5 +66,4 @@ class TaskController extends Controller
 
         return redirect()->route('admin.tasks.view')->with('success', "The task is created successfully.");
     }
-
 }

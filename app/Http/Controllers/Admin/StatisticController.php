@@ -42,7 +42,6 @@ class StatisticController extends Controller
             }
         }
 
-
         return response()->json(['draw' => intval($request->input('draw')), 'recordsFiltered' => $count, 'recordsTotal' => $count, 'data' => $data,]);
     }
 }

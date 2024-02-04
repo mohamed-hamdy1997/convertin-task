@@ -2,9 +2,6 @@
 
 namespace App\Observers;
 
-use App\Enums\AUser;
-use App\Http\Services\FirebaseService;
-use App\Jobs\Firebase\SetUserData;
 use App\Jobs\HandleTaskCreationStatistics;
 use Illuminate\Database\Eloquent\Model;
 
