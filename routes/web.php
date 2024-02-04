@@ -22,7 +22,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin'], 'as' => 'admin.'],
         Route::get('', [TaskController::class, 'index'])->name('view');
         Route::get('data', [TaskController::class, 'getTasksData'])->name('data');
         Route::get('create', [TaskController::class, 'createTaskView'])->name('create.view');
-        Route::post('create', [TaskController::class, 'createTask'])->name('create');
+        Route::post('', [TaskController::class, 'createTask'])->name('create');
     });
 
     Route::group(['prefix' => 'statistics', 'as' => 'statistics.'], function () {
