@@ -1,11 +1,11 @@
 @extends('admin.layouts.layout')
 @section('title')
-    Tasks
+    Statistics
 @endsection
 
 @section('content')
     <ol class="breadcrumb text-muted fs-6 fw-semibold mb-6">
-        <li class="breadcrumb-item text-muted">Tasks</li>
+        <li class="breadcrumb-item text-muted">Statistics</li>
     </ol>
 
     <div class="table-site">
@@ -17,26 +17,14 @@
                        class="search-table form-control form-control-solid w-md-250px ps-15"
                        placeholder="Search"/>
             </div>
-
-            <div class="d-flex justify-content-end align-items-center  mtsm-10"
-                 data-kt-docs-table-toolbar="base">
-
-                <a href="{{ route('admin.tasks.create.view') }}" type="button" class="btn btn-primary ms-2">
-                    <i class="ki-duotone ki-plus fs-2"></i>
-                    New Task
-                </a>
-            </div>
         </div>
         <div id="kt_datatable_example_1_export" class="d-none"></div>
         <!--end::Search-->
         <table id="datatable_configuration" class="table table-row-bordered gy-5">
             <thead>
             <tr class="fw-semibold fs-6 text-muted">
-                <th class='text-start'>Title</th>
-                <th class='text-start'>Description</th>
-                <th class='text-start'>Assigned Name</th>
-                <th class='text-start'>Admin Name</th>
-                <th class='text-start'>Created At</th>
+                <th class='text-start'>User Name</th>
+                <th class='text-start'>Number Of Tasks</th>
             </tr>
             </thead>
             <tbody>
@@ -65,7 +53,7 @@
                     serverSide: true,
 
                     ajax: {
-                        url: "{{ route('admin.tasks.data') }}",
+                        url: "{{ route('admin.statistics.data') }}",
                         type: "GET",
                         data: function (d) {
                             return d;
@@ -75,24 +63,13 @@
                     columns: [
 
                         {
-                            "data": "title"
-                        },
-                        {
-                            "data": "description"
-                        },
-                        {
-                            "data": "assigned_name",
+                            "data": "user_name",
                             orderable: false,
                             searchable: false
                         },
                         {
-                            "data": "admin_name",
-                            orderable: false,
-                            searchable: false
-                        },
-                        {
-                            "data": "created_at"
-                        },
+                            "data": "num_of_tasks"
+                        }
                     ],
 
                     order: [],
