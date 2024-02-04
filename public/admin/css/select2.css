@@ -1,0 +1,21 @@
+.select2-container--bootstrap5 .select2-selection--multiple .select2-selection_rendered .select2-selectionchoice .select2-selectionchoice_remove {
+    left: 8px !important;
+    right: auto !important;
+}
+
+.select2-container .select2-selection--multiple .select2-selection__rendered {
+    white-space: normal !important;
+}
+
+.select2-container--bootstrap5 .select2-selection--multiple:not(.form-select-sm):not(.form-select-lg) .select2-selection__choice {
+    margin: 2px 2px !important;
+}
+
+.select2-container{
+    width: -webkit-fill-available !important;
+}
+
+.border-select .select2-container--bootstrap5 .select2-selection--single {
+    height: 43px !important;
+    width: 100% !important !important;
+}
