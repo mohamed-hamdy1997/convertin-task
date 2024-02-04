@@ -12,7 +12,7 @@ Route::get('/', function () {
 Route::group(['prefix' => 'login'], function () {
     Route::get('', function () {
         return view('auth/login');
-    });
+    })->name('login.view');
     Route::post('', [AuthController::class, 'login'])->name('login');
 });
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');

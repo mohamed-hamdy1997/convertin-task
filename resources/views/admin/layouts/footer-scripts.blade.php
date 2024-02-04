@@ -46,6 +46,9 @@
     @if (Session::has('error'))
     toastr.error("{{ Session::get('error') }}");
     @endif
+    @if (Session::has('errors'))
+    toastr.error("{{ Session::get('errors') }}");
+    @endif
 </script>
 @yield('script')
 @stack('script')

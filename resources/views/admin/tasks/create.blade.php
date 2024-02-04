@@ -2,6 +2,15 @@
 @section('title')
     Create Task
 @endsection
+
+@section('style')
+   <style>
+       .select2-selection--single {
+           padding-left: 10px;
+       }
+   </style>
+@endsection
+
 @section('content')
 
     <ol class="breadcrumb text-muted fs-6 fw-semibold mb-6">
